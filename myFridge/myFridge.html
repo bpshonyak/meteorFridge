@@ -1,9 +1,8 @@
-<html>
- <title>myFridge</title>
-</html>
-
+<head>
+  <title>myFridge</title>
+</head>
 <body>
-  {{> container}}
+{{> container}}
 </body>
 
 <template name="container">
@@ -19,10 +18,10 @@
 
 <template name="fridge">
   <div id="fridge">
-    <img src="/empty-fridge.jpg" alt="Empty Fridge" class="image-responsive">
+    <img class="image-responsive" src="/empty-fridge.jpg" />
     <ul>
       {{#each products}}
-      <li>{{> productListItem}}</li>
+        <li>{{> productListItem}}</li>
       {{/each}}
     </ul>
   </div>
@@ -34,10 +33,11 @@
       {{#each products}}
         <li>{{> productListItem}}</li>
       {{/each}}
-    </ul>
-  </div>
+    </ul> </div>
 </template>
 
-<template>
-  <img src="{{img}}" data-id="{{_id}}" class="image-responsive product-image draggable" alt="">
+<template name="productListItem">
+  <img src="{{img}}"
+       data-id="{{_id}}"
+       class="image-responsive product-image draggable" />
 </template>
